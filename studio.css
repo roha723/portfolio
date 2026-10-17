@@ -5,3 +5,20 @@
 
 /* Brand wordmark */
 .brand-wordmark{font:18px Pixel,monospace;letter-spacing:0;text-transform:none;line-height:1.4}.brand-wordmark small{font:8px monospace;letter-spacing:2px}.signature{font-size:clamp(20px,3vw,30px);text-transform:none}@media(max-width:600px){.brand-wordmark{font-size:14px}.brand-wordmark small{font-size:7px;letter-spacing:1px}.signature{font-size:24px}}
+
+/* Personal welcome */
+.personal-hero{height:auto;min-height:920px;max-height:none;display:flex;align-items:center;padding:135px 0 120px}
+.personal-hero .hero-content{padding-top:0;position:relative;z-index:3;pointer-events:none}
+.personal-hero .hero-content a,.personal-hero .hero-content button{pointer-events:auto}
+.personal-hero h1{font-size:clamp(58px,6.2vw,88px);line-height:1.05;letter-spacing:-3px;text-transform:none;margin:16px 0 24px;max-width:58%}
+.personal-hero .intro-name{font-size:13px;color:#d6af8f;margin-top:25px}
+.welcome-copy{max-width:53%;font-size:14px;line-height:1.8;color:#cbbbae}
+.welcome-copy p{margin:0 0 14px}.welcome-copy .welcome-lead{font-size:18px;line-height:1.6;color:#f0e3d3}.welcome-copy strong{font-weight:normal;color:#ffb572}.welcome-copy a{color:#d0adf1;border-bottom:1px solid #a57ec766}
+.personal-hero .actions{margin-top:28px}.personal-hero .hero-tags{margin-top:26px}
+.hero-portrait{position:absolute;right:max(30px,calc((100vw - 1240px)/2));bottom:90px;width:39%;max-width:470px;margin:0;z-index:2}
+.hero-portrait img{display:block;width:100%;height:auto;max-height:720px;object-fit:contain;object-position:bottom;position:relative;mask-image:linear-gradient(#000 85%,transparent 100%)}
+.portrait-glow{position:absolute;inset:20% -15% 0;background:radial-gradient(ellipse,#e8842933,transparent 65%);pointer-events:none}
+.hero-portrait figcaption{position:absolute;bottom:12px;left:12%;border-left:2px solid #e7a36d;padding:10px 18px;background:linear-gradient(90deg,#100d0ce8,#100d0c88);line-height:1.6}
+.hero-portrait figcaption span{font:8px monospace;letter-spacing:2px;color:#c5926a}.hero-portrait figcaption strong{display:block;font:18px Pixel,monospace;color:#f3dac2;margin:8px 0}.hero-portrait figcaption small{font-size:11px;color:#c8b2a0}
+@media(max-width:900px){.personal-hero{display:block;padding:120px 0 90px;min-height:0}.personal-hero h1{max-width:100%;font-size:64px}.welcome-copy{max-width:100%}.hero-portrait{position:relative;right:auto;bottom:auto;width:65%;max-width:400px;margin:30px auto 0}.hero-portrait img{max-height:560px}.personal-hero .hero-content{padding-top:0}}
+@media(max-width:600px){.personal-hero{padding-top:110px}.personal-hero h1{font-size:57px;letter-spacing:-2px}.welcome-copy{font-size:14px;line-height:1.75}.welcome-copy .welcome-lead{font-size:17px}.personal-hero .intro-name{font-size:11px}.hero-portrait{width:88%;margin-top:22px}.hero-portrait img{max-height:510px}.hero-portrait figcaption{left:8%;bottom:5px}.personal-hero .actions{flex-wrap:wrap;gap:20px}}
