@@ -1,0 +1,34 @@
+/* Four by five true block geometry, with a recessed light-emitting surface. */
+.portal-section{background:radial-gradient(ellipse at 78% 50%,#602b732c,transparent 60%),linear-gradient(120deg,#1a131e,#110e15);padding-block:50px;overflow:visible}
+.world-portal{perspective:1100px;min-height:565px;isolation:isolate}
+.portal-structure{width:304px;height:380px;margin:25px 20px 40px 0;perspective:1100px;transform:none;filter:none}
+.mc-frame{display:block;transform-style:preserve-3d;transform:rotateX(-2deg) rotateY(-9deg);transition:transform .6s;isolation:auto}
+.mc-frame:before,.mc-frame:after{display:none}
+.mc-block{position:absolute;left:calc(var(--bx)*25%);top:calc(var(--by)*20%);width:25%;height:20%;transform-style:preserve-3d;--block-depth:32px}
+.mc-block>i{position:absolute;display:block;background-image:url('assets/obsidian-atlas.svg');background-size:400% 200%;background-position:var(--tx) var(--ty);image-rendering:pixelated;backface-visibility:hidden}
+.block-front{inset:0;box-shadow:inset 1px 1px #aa81b426,inset -1px -1px #050309cc;border:1px solid #0a0711}
+.block-front:before{content:'';position:absolute;inset:2px;background:linear-gradient(145deg,#ba8edf0b,transparent 40%,#08051133);pointer-events:none}
+.block-right{left:100%;top:0;width:var(--block-depth);height:100%;transform-origin:left;transform:rotateY(90deg);filter:brightness(.62);border-block:1px solid #09060e}
+.block-top{left:0;top:0;width:100%;height:var(--block-depth);transform-origin:top;transform:rotateX(-90deg);filter:brightness(1.23);border:1px solid #2c1e3e}
+.edge-left .block-right{filter:none;background-blend-mode:screen;background-color:#693388;box-shadow:inset 0 0 15px #9f5ace44}
+.edge-left .block-front:after,.edge-right .block-front:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 65%,#a05acf28);pointer-events:none}
+.edge-right .block-front:after{background:linear-gradient(90deg,#a05acf26,transparent 35%)}
+.mc-surface{inset:20% 25%;width:auto;height:auto;transform:translateZ(-22px);background:#7536ae;box-shadow:0 0 18px #b567dd99,0 0 55px #9b40d345;overflow:hidden}
+.mc-surface:before{display:none}
+.mc-surface:after{inset:0;border:1px solid #d99dff8c;box-shadow:inset 0 0 11px #d88affaa,inset 0 0 32px #9c40df55,0 0 15px #bd60ff99;background:linear-gradient(90deg,#d988ff35,transparent 18% 82%,#d988ff35);pointer-events:none;animation:portalBreath 5s ease-in-out infinite}
+.mc-portal-canvas{width:100%;height:100%;opacity:1;image-rendering:pixelated}
+.portal-aura{inset:4% -12% 15%;background:radial-gradient(ellipse at 50% 48%,#a94ef14a,transparent 65%);filter:blur(15px);animation:portalBreath 5s ease-in-out infinite}
+.portal-floor{display:block;bottom:97px;width:350px;height:60px;background:radial-gradient(ellipse,#b979da42,#58246e1a 45%,transparent 72%);transform:rotate(-3deg);z-index:-1}
+.portal-floor:after{display:none}
+.portal-particles{inset:15% 12%;z-index:5;pointer-events:none}.portal-particles i{box-shadow:0 0 10px #d680ff99;background:#df9bff;width:4px;height:4px;animation:portalEscape 4.8s ease-out infinite}.portal-particles i:nth-child(even){--drift:-50px;animation-duration:6s}.portal-particles i:nth-child(3n){width:2px;height:2px;--drift:38px}
+@keyframes portalEscape{0%{opacity:0;transform:translate(0,15px) scale(.5)}20%{opacity:.9}100%{opacity:0;transform:translate(var(--drift,60px),-75px) scale(.3)}}
+@keyframes portalBreath{0%,100%{opacity:.72}50%{opacity:1}}
+.reduce-motion .portal-aura,.reduce-motion .mc-surface:after,.reduce-motion .portal-particles i{animation:none}
+@media(prefers-reduced-motion:reduce){.portal-aura,.mc-surface:after,.portal-particles i{animation:none}}
+.world-portal:hover .portal-structure,.world-portal:focus-visible .portal-structure{transform:none;filter:none}
+.world-portal:hover .mc-frame,.world-portal:focus-visible .mc-frame{transform:rotateX(-1deg) rotateY(-5deg) translateY(-4px)}
+.portal-enter{border-color:#b37bc955;background:linear-gradient(110deg,#6736793b,#26172f);box-shadow:inset 0 1px #d7a4f119,0 8px 30px #0004;letter-spacing:1px}
+.world-portal:hover .portal-enter{border-color:#d7a4f199;background:linear-gradient(110deg,#75428b5e,#33213f)}
+@media(max-width:900px){.portal-section{padding-inline:26px}.portal-structure{width:256px;height:320px}.mc-block{--block-depth:27px}.mc-surface{transform:translateZ(-19px)}.world-portal{min-height:510px}}
+@media(max-width:650px){.hero{min-height:890px;padding-bottom:210px}.hero-content{padding-top:135px}.portal-section{padding:34px 20px 18px}.world-portal{min-height:485px}.portal-structure{width:240px;height:300px;margin:22px 15px 37px 0}.mc-block{--block-depth:25px}.mc-surface{transform:translateZ(-18px)}.portal-floor{width:100%;bottom:108px}}
+@media(max-width:360px){.hero{min-height:970px}.portal-section{padding-inline:14px}.portal-structure{width:216px;height:270px}.world-portal{min-height:455px}.mc-block{--block-depth:23px}.mc-surface{transform:translateZ(-16px)}}
